@@ -32,6 +32,9 @@ Some parts on order:
 
 The NeoPixels need 5v, a small UBEC (RC 5v regulator board) will most likely be used.
 
+Basic idea of the wiring to be done.
+![sch]({{ site.url }}/assets/2014-02-17-MotoSignalSch.png)
+
 [neopixel]: http://learn.adafruit.com/adafruit-neopixel-uberguide/overview
 
 
