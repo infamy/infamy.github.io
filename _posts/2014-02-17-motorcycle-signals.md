@@ -30,6 +30,8 @@ Some parts on order:
 
 [NeoPixels][neopixel] are pretty nifty and should make for some interesting options in terms of features. Driving a total of around 16 leds (8 per side) should mean the little microcontroller can handle it without stepping up to something much more sophisticated.
 
+The NeoPixels need 5v, a small UBEC (RC 5v regulator board) will most likely be used.
+
 [neopixel]: http://learn.adafruit.com/adafruit-neopixel-uberguide/overview
 
 
