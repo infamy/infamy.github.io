@@ -1,1 +1,1 @@
-Prpject used to host my blog via github pages.
+Project used to host my blog via github pages.
