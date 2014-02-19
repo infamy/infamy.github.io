@@ -4,6 +4,7 @@ title:  "Lightweight DIY Camping Tarp"
 subtitle: "A DIY Hammock Camping Hex Tarp"
 categories: diy camping
 published: true
+comments: true
 tags:
  - DIY
  - MotoCamping
