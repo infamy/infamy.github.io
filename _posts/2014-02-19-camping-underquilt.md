@@ -3,7 +3,7 @@ layout: post
 title:  "Synthetic DIY Camping Underquilt"
 subtitle: "A DIY Hammock Camping Synthetic Underquilt"
 categories: diy camping
-published: false
+published: true
 comments: true
 tags:
  - DIY
