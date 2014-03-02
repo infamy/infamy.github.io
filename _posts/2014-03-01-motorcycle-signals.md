@@ -3,7 +3,7 @@ layout: post
 title:  "Motocycle Sidecase Signals"
 subtitle: "A DIY Motocycle Sidecase Signals"
 categories: diy electronics
-published: false
+published: true
 comments: true
 tags:
  - DIY
@@ -19,11 +19,6 @@ My current concern is if the Adafruit Trinket will have enough code space if not
 
 Having played around with it the NeoPixels a few things become clear.
 
-- They are BRIGHT. (More then enough!)
+- They are BRIGHT. (More then enough!) 
 - Getting a colour I like out of them will be a little tricky.
 - The startup time of the Trinket is fairly long. (10s) During which time the LEDS will be dark.
-
-A quick clip of some blinking light. I hooked up a Trinket to one of the NeoPixel Sticks and put it all in a piece of clear shrink tubing to give me a small portal development system to figure out LED colours and blink speed.
-
-
-
