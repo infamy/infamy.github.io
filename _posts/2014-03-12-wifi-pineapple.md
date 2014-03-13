@@ -13,7 +13,7 @@ tags:
 
 At a local InfoSec conferences a local hackspace was running a wall of sheep/wall of shame. Basicly they scan for all wifi clients etc, and post up the SSID, so access points as well as wifi clients.
 
-Deciding to have some fun with this, loaded up my [WifiPineapple][https://wifipineapple.com/] with mkd (occupineapple) with a fuzz list full of SQL and command injections.
+Deciding to have some fun with this, loaded up my [WifiPineapple](https://wifipineapple.com/) with mkd (occupineapple) with a fuzz list full of SQL and command injections.
 
 Seeing as this had no effect, occupineapple was turn on in random mode, to create a lot of whitenoise, making the list useless. Sometimes, the best defense is a good offence.
 
