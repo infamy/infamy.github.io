@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Compact Python Reverse Shell Revisisted"
-subtitle: "Making a compact python reverse shell, even more compact! Expanded"
+title:  "Clint Python Library"
+subtitle: "Clint Python Library"
 categories: python
 published: true
 comments: true
