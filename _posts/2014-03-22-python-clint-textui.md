@@ -10,7 +10,7 @@ tags:
  - clint.textui
 ---
 
-clint is a newer upcoming CLI UI library for python. Having played around with it over the past week for a few different projects and having commit some bug fixes to it. It fills an interesting neach. Sadly lacking is documentation and great examples. Below is some snippets of code that maybe useful.
+clint is a newer upcoming CLI UI library for python. Having played around with it over the past week for a few different projects and having commit some bug fixes to it. It fills an interesting niche. Sadly lacking is documentation and great examples. Below is some snippets of code that maybe useful.
 
 
 {% highlight python linenos %}
