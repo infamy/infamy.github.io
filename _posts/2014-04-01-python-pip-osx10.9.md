@@ -11,7 +11,7 @@ tags:
  - mavericks
 ---
 
-Under OSX 10.9 Mavericks with the latest update when you try and use pip to install any python package that needs to compile something you will be greated with a cryptic clang error.
+Under OSX 10.9 Mavericks with the latest update when you try and use pip to install any python package that needs to compile something from source you will be greated with a cryptic clang error.
 
 ```
 **clang: error: unknown argument: '-mno-fused-madd' [-Wunused-command-line-argument-hard-error-in-future]
