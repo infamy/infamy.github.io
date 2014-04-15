@@ -13,7 +13,7 @@ tags:
 
 A design of a helmet hook that would work over a simple cubical to hold a helmet. Made with openSCAD so it can be readjusted to different cubical wall thickness.
 
-<script src="https://embed.github.com/view/3d/infamy/3dpritings/master/helmethook/helmethook.stl"></script>
+<script src="https://embed.github.com/view/3d/infamy/3dprojects/master/helmethook/helmethook.stl"></script>
 
 Have yet to print it. Use at your own risk.
 
