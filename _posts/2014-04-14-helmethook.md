@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Motorcycle Cubical Hook"
-subtitle: "Motorcycle Cubical Hook"
+title:  "Motorcycle Helmet Cubical Hook"
+subtitle: "Motorcycle Helmet Cubical Hook"
 categories: openscad
 published: true
 comments: true
