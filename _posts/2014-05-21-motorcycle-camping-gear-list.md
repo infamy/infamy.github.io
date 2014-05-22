@@ -11,6 +11,10 @@ tags:
  - motocamping
 ---
 
+List of gear for a weekend getaway of motocamping.
+
+Best way to think of it is, ultralight backpacking, on two wheels. Keep gear to a minimal, you have access to most of what you could ever want at almost any gas station.
+
 Motorcycle Stuff
 ================
 
