@@ -97,10 +97,10 @@ Cooking
  * Dishsoap/pad
  * Trash bag
 
- Food
- ====
+Food
+====
 
-  * Drink mix
-  * Coffee powder
-  * Snacks
-  * Freeze dried meals
+ * Drink mix
+ * Coffee powder
+ * Snacks
+ * Freeze dried meals
