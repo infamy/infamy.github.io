@@ -3,7 +3,7 @@ layout: post
 title:  "MotoCamping Trip Vancouver, BC to Nicola Lake, near Merrit, BC"
 subtitle: ""
 categories: motocamping
-published: false
+published: true
 comments: true
 tags:
  - motorcycle
