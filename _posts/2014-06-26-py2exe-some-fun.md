@@ -16,4 +16,6 @@ One of the trickiest parts is building the dll exclude list, and module exclude.
 
 A few tricks about doing this. Don't build an all in one executable till you get this resolved. Once you build it, you can take a look inside the zip file and figure out which modules are currently included. Going over the list there are a few you can exclude, depending on if you need it or not you can exclude Unicode which will save a fair bit of room.
 
-Executable built with py2exe have a nice side effect of being almost free artefacts and hard to disassemble. Which is a nice side effect at least for certain purposes.
+Executable built with py2exe have a nice side effect of being almost free artefacts and hard to disassemble. Which is a nice side effect at least for certain purposes. 
+
+Building the executable as a single file binary should be the last step you take. It is a lot easier to figure out and solve problems while building a normal binary.
