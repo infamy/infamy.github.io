@@ -19,7 +19,9 @@ Some pictures from my completed unit are below. I even got it printing just fine
 I have tested printing at up to speeds of 125mm/sec which may have been pushing it a bit fast, but overall the print quality did not suffer too much. I did find some issues with OctoPrint and will be upgrading to a newer version and will write up a post on my findings.
 
 ![Rigidbot Built]({{ site.url }}/assets/2014-07-29-rigidbot-full.jpg)
+
 Fully build was about 3h to put the kit together, most of it was pretty clear, still some minor things I want to fix. More about this to come.
 
 ![Voodoo Donuts!]({{ site.url }}/assets/2014-07-29-rigidbot-print.jpg)
+
 A test print 50mm angle calibration print, turned out decently.
