@@ -21,5 +21,5 @@ I have tested printing at up to speeds of 125mm/sec which may have been pushing 
 ![Rigidbot Built]({{ site.url }}/assets/2014-07-29-rigidbot-full.jpg)
 Fully build was about 3h to put the kit together, most of it was pretty clear, still some minor things I want to fix. More about this to come.
 
-![Voodoo Donuts!]({{ site.url }}/assets/2014-06-29-rigidbot-print.jpg)
+![Voodoo Donuts!]({{ site.url }}/assets/2014-07-29-rigidbot-print.jpg)
 A test print 50mm angle calibration print, turned out decently.
