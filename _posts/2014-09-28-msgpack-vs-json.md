@@ -19,4 +19,4 @@ It brings to the table a few intersting things.
  - Smaller, the data dumps are smaller.
  - If the data is UTF8/Unicode, the size can be 20% smaller if not better.
 
-Currently using it in a few projects, will see if i run into any issues with it. Only time will tell.
+Currently using it in a few projects, will see if I run into any issues with it. Only time will tell.
