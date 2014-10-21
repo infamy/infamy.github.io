@@ -16,7 +16,7 @@ During some reason data processing, a nifty built in library feature in python w
 from multiprocessing import Pool
 
 def process(data):
-    print "{+} Processing: %s" % join(data)
+    print "{+} Processing: %s" % data
 	#do something useful
 
 if __name__ == '__main__':
