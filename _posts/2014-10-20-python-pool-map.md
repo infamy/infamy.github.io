@@ -10,7 +10,7 @@ tags:
  - multiprocessing
 ---
 
-During some reason data processing, a nifty built in library feature in python was brought to my attention. Multiprocessing pool.map function, short little snippet below.
+During some recent data processing, a nifty built-in library was brought to my attention. Multiprocessing pool.map function, short little snippet below.
 
 ``` python
 from multiprocessing import Pool
@@ -29,3 +29,5 @@ if __name__ == '__main__':
 ```
 
 In short, you can with one line almost turn any array that needs to be process into a multiprocess map reduce party.
+
+From a python processing, if you have isolated data, this will allow you to scale in a pretty aggresive way.
