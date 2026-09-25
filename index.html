@@ -181,7 +181,6 @@
     <span class="sign">73 de <b>VA7IF</b></span>
     <nav aria-label="Footer">
       <a href="https://github.com/infamy/">GitHub</a>
-      <a href="https://neonplug.app">NeonPlug</a>
       <a href="https://github.com/infamy/infamy.github.io">Source for this page</a>
     </nav>
     <span class="made" tabindex="0">
@@ -197,7 +196,7 @@
 <script>
 // Each project is a carrier on the band. f = position (0..1), bw = width, mode = how it keys up.
 const PROJECTS = [
-  { name: "JackIt", url: "https://github.com/insecurityofthings/jackit", f: .05, bw: .008, mode: "scan",
+  { name: "JackIt", url: "https://github.com/insecurityofthings/jackit", links: [["GitHub", "https://github.com/insecurityofthings/jackit"], ["insecurityofthings.com", "https://insecurityofthings.com/"]], f: .05, bw: .008, mode: "scan",
     stack: "Python, nRF24. 898 stars",
     what: "Exploit code for MouseJack: types keystrokes into wireless mice and keyboards from a USB radio dongle. Co-written with phikshun, built on Bastille's research." },
   { name: "NeonPlug", url: "https://neonplug.app", repo: "https://github.com/infamy/NeonPlug", logo: { src: "neonplug.png", w: 41, h: 28 }, f: .14, bw: .016, mode: "fm",
@@ -212,7 +211,7 @@ const PROJECTS = [
   { name: "Basalt", url: "https://infamy.github.io/basalt/", repo: "https://github.com/infamy/basalt", siteLabel: "Docs", f: .44, bw: .035, mode: "wide",
     stack: "ESP32, ESPHome. Forward-facing fork",
     what: "Turns an affordable touchscreen into a Home Assistant control panel, flashed from a browser and set up on the screen itself. A fork of James Tenniswood's <a class=\"inline\" href=\"https://github.com/jtenniswood/espcontrol\">EspControl</a> that keeps pace with upstream and adds what's outside its scope, like waking the screen on camera motion." },
-  { name: "SMD Magazines", short: "SMD Mags", url: "https://github.com/infamy/smd-magazines", f: .53, bw: .008, mode: "cw",
+  { name: "SMD Magazines", short: "SMD Mags", url: "https://www.meshmeld.com/smd-magazines/", links: [["Label maker", "https://www.meshmeld.com/smd-magazines/"], ["Printables", "https://www.printables.com/model/1825340-smd-component-tape-magazines-xl-size-anti-release"], ["GitHub", "https://github.com/infamy/smd-magazines"]], f: .53, bw: .008, mode: "cw",
     stack: "Parametric OpenSCAD",
     what: "Printable cut-tape magazines in three widths, the rail they clip to, and a barcode label maker." },
   { name: "UGV Rover", f: .61, bw: .014, mode: "burst",
@@ -229,6 +228,11 @@ const PROJECTS = [
     what: "Security tools I build at work, and can't talk about." },
 ];
 
+function outLinks(p) {
+  const links = p.links || (p.repo ? [[p.siteLabel || p.url.replace("https://", ""), p.url], ["GitHub", p.repo]] : []);
+  return links.length ? `<span class="out">${links.map(([label, href]) => `<a href="${href}">${label}</a>`).join("")}</span>` : "";
+}
+
 const scale = document.getElementById("scale");
 const list = document.getElementById("list");
 const readout = document.getElementById("readout");
@@ -244,7 +248,7 @@ PROJECTS.forEach((p, i) => {
   const li = document.createElement("li");
   if (p.redacted) li.className = "redacted";
   li.innerHTML = `<span class="m">${p.tag}</span>
-    <h3><span class="title">${p.url ? `<a href="${p.url}">${p.name}</a>` : p.name}${p.logo ? `<img class="logo" src="${p.logo.src}" alt="" width="${p.logo.w}" height="${p.logo.h}">` : ""}</span><span class="stack">${p.stack}</span>${p.repo ? `<span class="out"><a href="${p.url}">${p.siteLabel || p.url.replace("https://", "")}</a><a href="${p.repo}">GitHub</a></span>` : ""}</h3>
+    <h3><span class="title">${p.url ? `<a href="${p.url}">${p.name}</a>` : p.name}${p.logo ? `<img class="logo" src="${p.logo.src}" alt="" width="${p.logo.w}" height="${p.logo.h}">` : ""}</span><span class="stack">${p.stack}</span>${outLinks(p)}</h3>
     <div class="what"><p>${p.what}${p.redacted ? ` <span class="bar" style="width:9ch"></span> <span class="bar" style="width:5ch"></span> <span class="bar" style="width:12ch"></span>` : ""}</p></div>`;
   list.appendChild(li);
 
