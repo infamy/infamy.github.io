@@ -86,18 +86,52 @@
   .signals li.on h3 a { color: var(--cyan); }
   .signals .stack { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
   .signals p { margin: 0; color: #d4cde2; }
+  .signals .title { display: inline-flex; align-items: center; gap: 8px; }
+  .signals .logo { height: 22px; width: auto; margin: -4px 0; }
 
   .signals .bar { display: inline-block; height: .95em; vertical-align: -.1em; background: var(--text); opacity: .85; }
   .signals li.redacted .m { color: var(--magenta); }
 
-  footer { max-width: 1240px; margin: 0 auto; padding: 0 24px 40px; color: var(--muted); font-size: 13px; }
+  footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+  footer .wrap {
+    max-width: 1240px; margin: 0 auto; padding: 28px 24px 44px;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px;
+  }
+  footer .sign { color: var(--text); }
+  footer .sign b { color: var(--yellow); font-weight: 600; }
+  footer nav { margin-left: auto; display: flex; flex-wrap: wrap; gap: 22px; }
+  footer nav a { color: var(--muted); text-decoration: none; }
+  footer nav a:hover { color: var(--cyan); }
+  footer .note { flex-basis: 100%; font-size: 12px; opacity: .75; }
+
+  /* flag with a tooltip, same as ghosthid.app */
+  .made { position: relative; display: inline-flex; align-items: center; outline: none; }
+  .made svg { height: 14px; width: auto; opacity: .75; transition: opacity .2s; }
+  .made:hover svg, .made:focus-visible svg { opacity: 1; }
+  .made:focus-visible { outline: 2px solid var(--yellow); outline-offset: 4px; }
+  .made::after {
+    content: "Made in Canada"; position: absolute; bottom: calc(100% + 9px); right: 0;
+    background: var(--panel); border: 1px solid var(--line); color: var(--text);
+    font-size: 11px; white-space: nowrap; padding: 6px 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.4);
+    opacity: 0; transform: translateY(3px); pointer-events: none; transition: opacity .15s, transform .15s;
+  }
+  .made:hover::after, .made:focus-visible::after { opacity: 1; transform: translateY(0); }
+  @media (max-width: 640px) {
+    footer .wrap { padding: 24px 16px 36px; }
+    footer nav { margin-left: 0; order: 3; flex-basis: 100%; }
+    footer .note { order: 4; }
+    .made { margin-left: auto; }
+    .made::after { right: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) { .made svg, .made::after { transition: none; } }
 
   @media (max-width: 900px) {
     .log { grid-template-columns: 1fr; gap: 32px; padding: 32px 16px 64px; }
     .top { padding: 28px 16px 22px; }
     .marker .n { display: none; }
     .signals li { grid-template-columns: 36px 1fr; gap: 4px 12px; }
-    .signals li p { grid-column: 2; }
+    .signals li .what { grid-column: 2; }
   }
 </style>
 </head>
@@ -137,7 +171,23 @@
   </section>
 </main>
 
-<footer>Every signal above is a project. The waterfall is simulated.</footer>
+<footer>
+  <div class="wrap">
+    <span class="sign">73 de <b>VA7IF</b></span>
+    <nav aria-label="Footer">
+      <a href="https://github.com/infamy/">GitHub</a>
+      <a href="https://neonplug.app">NeonPlug</a>
+      <a href="https://github.com/infamy/infamy.github.io">Source for this page</a>
+    </nav>
+    <span class="made" tabindex="0">
+      <svg viewBox="0 0 9600 4800" role="img" aria-label="Made in Canada">
+        <path fill="#00fff7" d="m0 0h2400l99 99h4602l99-99h2400v4800h-2400l-99-99h-4602l-99 99H0z"/>
+        <path fill="#07040d" d="m2400 0h4800v4800h-4800zm2490 4430-45-863a95 95 0 0 1 111-98l859 151-116-320a65 65 0 0 1 20-73l941-762-212-99a65 65 0 0 1-34-79l186-572-542 115a65 65 0 0 1-73-38l-105-247-423 454a65 65 0 0 1-111-57l204-1052-327 189a65 65 0 0 1-91-27l-332-652-332 652a65 65 0 0 1-91 27l-327-189 204 1052a65 65 0 0 1-111 57l-423-454-105 247a65 65 0 0 1-73 38l-542-115 186 572a65 65 0 0 1-34 79l-212 99 941 762a65 65 0 0 1 20 73l-116 320 859-151a95 95 0 0 1 111 98l-45 863z"/>
+      </svg>
+    </span>
+    <span class="note">Every signal above is a project. The waterfall is simulated.</span>
+  </div>
+</footer>
 
 <script>
 // Each project is a carrier on the band. f = position (0..1), bw = width, mode = how it keys up.
@@ -145,13 +195,13 @@ const PROJECTS = [
   { name: "JackIt", url: "https://github.com/insecurityofthings/jackit", f: .05, bw: .008, mode: "scan",
     stack: "Python, nRF24. 898 stars",
     what: "Exploit code for MouseJack: types keystrokes into wireless mice and keyboards from a USB radio dongle. Co-written with phikshun, built on Bastille's research." },
-  { name: "NeonPlug", url: "https://neonplug.app", f: .14, bw: .016, mode: "fm",
+  { name: "NeonPlug", url: "https://neonplug.app", logo: { src: "neonplug.png", w: 41, h: 28 }, f: .14, bw: .016, mode: "fm",
     stack: "TypeScript, Web Serial, BLE. 33 stars",
     what: "Program your radio from a browser tab: channels, zones, contacts and scan lists over USB or Bluetooth. Supports the DM-32UV, AT-D890UV, UV5R-Mini and several Yaesu handhelds." },
   { name: "DM32 Protocol Spec", short: "DM32 Spec", url: "https://github.com/infamy/DM32-Protocol-Spec", f: .23, bw: .01, mode: "tdma",
     stack: "Reverse engineering. 16 stars",
     what: "How Baofeng's DM32 talks to its programming software, taken apart and written down." },
-  { name: "GhostHID", url: "https://github.com/infamy/GhostHID", f: .33, bw: .045, mode: "wide",
+  { name: "GhostHID", url: "https://github.com/infamy/GhostHID", logo: { src: "ghosthid.svg", w: 38, h: 50 }, f: .33, bw: .045, mode: "wide",
     stack: "ESP32-S3, C++",
     what: "A thumb-sized USB stick any computer sees as a plain keyboard and mouse, driven from your phone over Wi-Fi." },
   { name: "Basalt", url: "https://infamy.github.io/basalt/", f: .44, bw: .035, mode: "wide",
@@ -189,8 +239,8 @@ PROJECTS.forEach((p, i) => {
   const li = document.createElement("li");
   if (p.redacted) li.className = "redacted";
   li.innerHTML = `<span class="m">${p.tag}</span>
-    <h3>${p.url ? `<a href="${p.url}">${p.name}</a>` : p.name}<span class="stack">${p.stack}</span></h3>
-    <p>${p.what}${p.redacted ? ` <span class="bar" style="width:9ch"></span> <span class="bar" style="width:5ch"></span> <span class="bar" style="width:12ch"></span>` : ""}</p>`;
+    <h3><span class="title">${p.url ? `<a href="${p.url}">${p.name}</a>` : p.name}${p.logo ? `<img class="logo" src="${p.logo.src}" alt="" width="${p.logo.w}" height="${p.logo.h}">` : ""}</span><span class="stack">${p.stack}</span></h3>
+    <div class="what"><p>${p.what}${p.redacted ? ` <span class="bar" style="width:9ch"></span> <span class="bar" style="width:5ch"></span> <span class="bar" style="width:12ch"></span>` : ""}</p></div>`;
   list.appendChild(li);
 
   const on = () => setActive(i), off = () => setActive(-1);
