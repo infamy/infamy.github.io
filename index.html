@@ -86,6 +86,11 @@
   .signals li.on h3 a { color: var(--cyan); }
   .signals .stack { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
   .signals p { margin: 0; color: #d4cde2; }
+  .signals .out { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 8px; font-size: 13px; font-weight: 400; position: relative; z-index: 1; }
+  .signals .out a { color: var(--cyan); text-decoration: none; border-bottom: 1px solid rgba(255,0,255,.6); }
+  .signals .out a:hover { color: #fff; border-color: var(--cyan); }
+  .signals a.inline { color: var(--text); position: relative; z-index: 1; text-decoration-color: var(--magenta); }
+  .signals a.inline:hover { color: var(--cyan); }
   .signals .title { display: inline-flex; align-items: center; gap: 8px; }
   .signals .logo { height: 22px; width: auto; margin: -4px 0; }
 
@@ -195,18 +200,18 @@ const PROJECTS = [
   { name: "JackIt", url: "https://github.com/insecurityofthings/jackit", f: .05, bw: .008, mode: "scan",
     stack: "Python, nRF24. 898 stars",
     what: "Exploit code for MouseJack: types keystrokes into wireless mice and keyboards from a USB radio dongle. Co-written with phikshun, built on Bastille's research." },
-  { name: "NeonPlug", url: "https://neonplug.app", logo: { src: "neonplug.png", w: 41, h: 28 }, f: .14, bw: .016, mode: "fm",
+  { name: "NeonPlug", url: "https://neonplug.app", repo: "https://github.com/infamy/NeonPlug", logo: { src: "neonplug.png", w: 41, h: 28 }, f: .14, bw: .016, mode: "fm",
     stack: "TypeScript, Web Serial, BLE. 33 stars",
     what: "Program your radio from a browser tab: channels, zones, contacts and scan lists over USB or Bluetooth. Supports the DM-32UV, AT-D890UV, UV5R-Mini and several Yaesu handhelds." },
   { name: "DM32 Protocol Spec", short: "DM32 Spec", url: "https://github.com/infamy/DM32-Protocol-Spec", f: .23, bw: .01, mode: "tdma",
     stack: "Reverse engineering. 16 stars",
     what: "How Baofeng's DM32 talks to its programming software, taken apart and written down." },
-  { name: "GhostHID", url: "https://github.com/infamy/GhostHID", logo: { src: "ghosthid.svg", w: 38, h: 50 }, f: .33, bw: .045, mode: "wide",
+  { name: "GhostHID", url: "https://ghosthid.app", repo: "https://github.com/infamy/GhostHID", logo: { src: "ghosthid.svg", w: 38, h: 50 }, f: .33, bw: .045, mode: "wide",
     stack: "ESP32-S3, C++",
     what: "A thumb-sized USB stick any computer sees as a plain keyboard and mouse, driven from your phone over Wi-Fi." },
-  { name: "Basalt", url: "https://infamy.github.io/basalt/", f: .44, bw: .035, mode: "wide",
-    stack: "ESP32, ESPHome",
-    what: "Turns an affordable touchscreen into a Home Assistant control panel, flashed from a browser and set up on the screen itself." },
+  { name: "Basalt", url: "https://infamy.github.io/basalt/", repo: "https://github.com/infamy/basalt", siteLabel: "Docs", f: .44, bw: .035, mode: "wide",
+    stack: "ESP32, ESPHome. Forward-facing fork",
+    what: "Turns an affordable touchscreen into a Home Assistant control panel, flashed from a browser and set up on the screen itself. A fork of James Tenniswood's <a class=\"inline\" href=\"https://github.com/jtenniswood/espcontrol\">EspControl</a> that keeps pace with upstream and adds what's outside its scope, like waking the screen on camera motion." },
   { name: "SMD Magazines", short: "SMD Mags", url: "https://github.com/infamy/smd-magazines", f: .53, bw: .008, mode: "cw",
     stack: "Parametric OpenSCAD",
     what: "Printable cut-tape magazines in three widths, the rail they clip to, and a barcode label maker." },
@@ -239,7 +244,7 @@ PROJECTS.forEach((p, i) => {
   const li = document.createElement("li");
   if (p.redacted) li.className = "redacted";
   li.innerHTML = `<span class="m">${p.tag}</span>
-    <h3><span class="title">${p.url ? `<a href="${p.url}">${p.name}</a>` : p.name}${p.logo ? `<img class="logo" src="${p.logo.src}" alt="" width="${p.logo.w}" height="${p.logo.h}">` : ""}</span><span class="stack">${p.stack}</span></h3>
+    <h3><span class="title">${p.url ? `<a href="${p.url}">${p.name}</a>` : p.name}${p.logo ? `<img class="logo" src="${p.logo.src}" alt="" width="${p.logo.w}" height="${p.logo.h}">` : ""}</span><span class="stack">${p.stack}</span>${p.repo ? `<span class="out"><a href="${p.url}">${p.siteLabel || p.url.replace("https://", "")}</a><a href="${p.repo}">GitHub</a></span>` : ""}</h3>
     <div class="what"><p>${p.what}${p.redacted ? ` <span class="bar" style="width:9ch"></span> <span class="bar" style="width:5ch"></span> <span class="bar" style="width:12ch"></span>` : ""}</p></div>`;
   list.appendChild(li);
 
