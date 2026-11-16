@@ -101,6 +101,9 @@
 
   .signals .bar { display: inline-block; height: .95em; vertical-align: -.1em; background: var(--text); opacity: .85; }
   .signals li.redacted .m { color: var(--magenta); }
+  .signals .declass { margin-top: 8px; }
+  .signals .declass p { margin: 4px 0 0; padding-left: 2ch; text-indent: -2ch; }
+  .signals .declass p::before { content: "▸ "; color: var(--magenta); }
 
   footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
   footer .wrap {
@@ -216,51 +219,45 @@ const PROJECTS = [
   { name: "JackIt", url: "https://github.com/insecurityofthings/jackit", links: [["GitHub", "https://github.com/insecurityofthings/jackit"], ["insecurityofthings.com", "https://insecurityofthings.com/"]], f: .05, bw: .008, mode: "scan",
     stack: "Python, nRF24",
     what: "Exploit code for MouseJack: types keystrokes into wireless mice and keyboards from a USB radio dongle. Co-written with phikshun, built on Bastille's research. We demoed it at Black Hat Arsenal 2017." },
-  { name: "NeonPlug", url: "https://neonplug.app", repo: "https://github.com/infamy/NeonPlug", logo: { src: "neonplug.png", w: 41, h: 28 }, f: .105, bw: .016, mode: "fm",
+  { name: "NeonPlug", url: "https://neonplug.app", repo: "https://github.com/infamy/NeonPlug", logo: { src: "neonplug.png", w: 41, h: 28 }, f: .12, bw: .016, mode: "fm",
     stack: "TypeScript, Web Serial, BLE",
     what: "Program your radio from a browser tab: channels, zones, contacts and scan lists over USB or Bluetooth. Supports the DM-32UV, AT-D890UV, UV5R-Mini and several Yaesu handhelds." },
-  { name: "DM32 Protocol Spec", short: "DM32 Spec", url: "https://github.com/infamy/DM32-Protocol-Spec", f: .16, bw: .01, mode: "tdma",
+  { name: "DM32 Protocol Spec", short: "DM32 Spec", url: "https://github.com/infamy/DM32-Protocol-Spec", f: .19, bw: .01, mode: "tdma",
     stack: "Reverse engineering",
     what: "How Baofeng's DM32 talks to its programming software, taken apart and written down." },
-  { name: "Ferrite", url: "https://ferritefw.dev", logo: { src: "ferrite.svg", w: 22, h: 22 }, links: [["ferritefw.dev", "https://ferritefw.dev"], ["Console", "https://console.ferritefw.dev"], ["Firmware repo", "https://github.com/ferritefw/ferrite"], ["Console repo", "https://github.com/ferritefw/console"], ["GitHub org", "https://github.com/ferritefw"]], f: .215, bw: .014, mode: "fm",
+  { name: "Ferrite", url: "https://ferritefw.dev", logo: { src: "ferrite.svg", w: 22, h: 22 }, links: [["ferritefw.dev", "https://ferritefw.dev"], ["Console", "https://console.ferritefw.dev"], ["Firmware repo", "https://github.com/ferritefw/ferrite"], ["Console repo", "https://github.com/ferritefw/console"], ["GitHub org", "https://github.com/ferritefw"]], f: .26, bw: .014, mode: "fm",
     stack: "Rust firmware, TypeScript console",
     what: "Free replacement firmware for the Radtel RT-950 Pro, plus Ferrite Console to install, update and program a radio running it, on macOS, Linux, Windows or in a browser." },
-  { name: "GhostHID", url: "https://ghosthid.app", repo: "https://github.com/infamy/GhostHID", logo: { src: "ghosthid.svg", w: 38, h: 50 }, f: .27, bw: .045, mode: "wide",
+  { name: "GhostHID", url: "https://ghosthid.app", repo: "https://github.com/infamy/GhostHID", logo: { src: "ghosthid.svg", w: 38, h: 50 }, f: .33, bw: .045, mode: "wide",
     stack: "ESP32-S3, C++",
     what: "A thumb-sized USB stick any computer sees as a plain keyboard and mouse, driven from your phone over Wi-Fi." },
-  { name: "Argus", f: .325, bw: .02, mode: "wide",
+  { name: "Argus", f: .4, bw: .02, mode: "wide",
     stack: "Go, vanilla JS. Not public yet",
     what: "A 4K wall display of everything going on around home: planes, ships, ferries, border waits, weather, lightning, tides, wildfire, quakes and local alerts, from 25 live feeds. One Go binary, no map library, its own fisheye projection." },
-  { name: "SMD Magazines", short: "SMD Mags", url: "https://www.meshmeld.com/smd-magazines/", links: [["Label maker", "https://www.meshmeld.com/smd-magazines/"], ["Printables", "https://www.printables.com/model/1825340-smd-component-tape-magazines-xl-size-anti-release"], ["GitHub", "https://github.com/infamy/smd-magazines"]], f: .38, bw: .008, mode: "cw",
+  { name: "SMD Magazines", short: "SMD Mags", url: "https://www.meshmeld.com/smd-magazines/", links: [["Label maker", "https://www.meshmeld.com/smd-magazines/"], ["Printables", "https://www.printables.com/model/1825340-smd-component-tape-magazines-xl-size-anti-release"], ["GitHub", "https://github.com/infamy/smd-magazines"]], f: .47, bw: .008, mode: "cw",
     stack: "Parametric OpenSCAD",
     what: "Printable cut-tape magazines in three widths, the rail they clip to, and a barcode label maker." },
-  { name: "UGV Rover", f: .435, bw: .014, mode: "burst",
+  { name: "UGV Rover", f: .54, bw: .014, mode: "burst",
     stack: "ESP-IDF, ROS 2. Not public yet",
     what: "Replacement firmware and a ROS 2 driver for Waveshare's UGV rovers, with a web page for driving and setup, and updates over Wi-Fi." },
-  { name: "OverCtrl", f: .49, bw: .008, mode: "hop",
+  { name: "OverCtrl", f: .61, bw: .008, mode: "hop",
     stack: "ESP32-S3, BLE. Not public yet",
     what: "A touchscreen remote for the lights in my van. It sends the same BLE packets as the existing remotes, so the receivers needed no changes." },
-  { name: "Omarchy tools", short: "Omarchy", f: .545, bw: .008, mode: "cw",
+  { name: "Omarchy tools", short: "Omarchy", f: .68, bw: .008, mode: "cw",
     stack: "Linux desktop. Not public yet",
     what: "Add-ons for the Omarchy desktop: a panel for the Windows VM, fan and temperature readouts, and an About This Mac window for Intel Macs running Linux." },
-  { name: "Basalt", url: "https://infamy.github.io/basalt/", repo: "https://github.com/infamy/basalt", siteLabel: "Docs", f: .6, bw: .01, mode: "wide",
+  { name: "Basalt", url: "https://infamy.github.io/basalt/", repo: "https://github.com/infamy/basalt", siteLabel: "Docs", f: .75, bw: .01, mode: "wide",
     stack: "ESP32, ESPHome. Forward-facing fork",
     what: "Turns an affordable touchscreen into a Home Assistant control panel, flashed from a browser and set up on the screen itself. A fork of James Tenniswood's <a class=\"inline\" href=\"https://github.com/jtenniswood/espcontrol\">EspControl</a> that keeps pace with upstream and adds what's outside its scope, like waking the screen on camera motion." },
-  { name: "FortiGuard Threat Map", short: "Threat Map", url: "https://web.archive.org/web/2019/https://threatmap.fortiguard.com/", links: [["Archived copy", "https://web.archive.org/web/2019/https://threatmap.fortiguard.com/"]], f: .655, bw: .012, mode: "burst",
-    stack: "Day job. Since replaced",
-    what: "The previous version of Fortinet's live threat map: attacks seen by FortiGuard drawn across the globe as they happen. The current one isn't mine." },
-  { name: "EBC Demo Servers", short: "EBC", f: .71, bw: .01, mode: "cw",
-    stack: "Day job. Hardware",
-    what: "Full fake servers for the Executive Briefing Center. They look like real rack gear, and the blinking lights are the whole point." },
-  { name: "Rubik's Cube", short: "RB3", f: .765, bw: .012, mode: "hop",
-    stack: "Day job. Security research",
-    what: "A custom polymorphic malware sample that's safe to run. It changes shape every time, for demos and training on sandbox-based malware detection. RB3 for short." },
-  { name: "OnMessage", f: .82, bw: .012, mode: "fm",
-    stack: "Day job. Linux",
-    what: "A digital signage system built from scratch, down to its own Linux images." },
-  { name: "Day job", tag: "M?", f: .925, bw: .07, mode: "spread", redacted: true,
-    stack: "Details redacted",
-    what: "The rest of what I build at work, and can't talk about." },
+  { name: "Day job", tag: "M?", f: .9, bw: .08, mode: "spread", redacted: true,
+    stack: "Mostly redacted",
+    what: "Most of what I build at work stays under wraps. A few things I can mention:",
+    items: [
+      `<a class="inline" href="https://web.archive.org/web/2019/https://threatmap.fortiguard.com/">FortiGuard Threat Map</a>, the 2016 to 2022 one: attacks seen by FortiGuard, drawn across the globe live. The current one isn't mine.`,
+      `EBC demo servers: full fake servers for the Executive Briefing Center. The blinking lights are the whole point.`,
+      `RB3, short for Rubik's Cube: a safe polymorphic malware sample for demos and training on sandbox-based detection.`,
+      `OnMessage: digital signage built from scratch, down to its own Linux images.`,
+    ] },
 ];
 
 function outLinks(p) {
@@ -273,6 +270,9 @@ const list = document.getElementById("list");
 const readout = document.getElementById("readout");
 let active = -1;
 
+// Blacked-out lines under the declassified items, for everything that stays redacted.
+const BARS = [[9, 5, 12], [14, 7], [6, 11, 4]];
+
 PROJECTS.forEach((p, i) => {
   const m = document.createElement(p.url ? "a" : "span");
   m.className = "marker"; if (p.url) m.href = p.url; m.style.left = (p.f * 100) + "%";
@@ -284,7 +284,7 @@ PROJECTS.forEach((p, i) => {
   if (p.redacted) li.className = "redacted";
   li.innerHTML = `<span class="m">${p.tag}</span>
     <h3><span class="title">${p.url ? `<a href="${p.url}">${p.name}</a>` : p.name}${p.logo ? `<img class="logo" src="${p.logo.src}" alt="" width="${p.logo.w}" height="${p.logo.h}">` : ""}</span><span class="stack">${p.stack}</span>${outLinks(p)}</h3>
-    <div class="what"><p>${p.what}${p.redacted ? ` <span class="bar" style="width:9ch"></span> <span class="bar" style="width:5ch"></span> <span class="bar" style="width:12ch"></span>` : ""}</p></div>`;
+    <div class="what"><p>${p.what}</p>${p.items ? `<div class="declass">${p.items.map(t => `<p>${t}</p>`).join("")}${BARS.map(w => `<p>${w.map(n => `<span class="bar" style="width:${n}ch"></span>`).join(" ")}</p>`).join("")}</div>` : ""}</div>`;
   list.appendChild(li);
 
   const on = () => setActive(i), off = () => setActive(-1);
