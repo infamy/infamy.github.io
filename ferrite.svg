@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Ferrite">
+  <title>Ferrite</title>
+  <!-- Ferrite favicon: the logo drawn for 16-32 px (thicker ring, seven heavier windings). -->
+  <circle cx="60" cy="60" r="36" fill="none" stroke="#9AA3AE" stroke-width="22"/>
+  <g stroke="#4DA3FF" stroke-width="11" stroke-linecap="round">
+    <line x1="42.3" y1="77.7" x2="19.7" y2="100.3"/>
+    <line x1="35.0" y1="60.0" x2="3.0" y2="60.0"/>
+    <line x1="42.3" y1="42.3" x2="19.7" y2="19.7"/>
+    <line x1="60.0" y1="35.0" x2="60.0" y2="3.0"/>
+    <line x1="77.7" y1="42.3" x2="100.3" y2="19.7"/>
+    <line x1="85.0" y1="60.0" x2="117.0" y2="60.0"/>
+    <line x1="77.7" y1="77.7" x2="100.3" y2="100.3"/>
+  </g>
+</svg>
