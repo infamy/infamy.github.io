@@ -71,6 +71,10 @@
   /* ---------- signal log ---------- */
   .log { max-width: 1240px; margin: 0 auto; padding: 40px 24px 80px; display: grid; grid-template-columns: 300px 1fr; gap: 48px; }
   .about p { margin: 0 0 14px; color: #d4cde2; }
+  .about h3 { font-family: "Chakra Petch", sans-serif; font-size: 1rem; font-weight: 600; margin: 22px 0 8px; }
+  .skills { list-style: none; margin: 0 0 14px; padding: 0; color: #d4cde2; }
+  .skills li { padding-left: 2ch; text-indent: -2ch; }
+  .skills li::before { content: "▸ "; color: var(--yellow); }
   .about h2, .signals h2 { font-family: "Chakra Petch", sans-serif; font-size: 1.35rem; margin: 0 0 14px; }
   .signals ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
   .signals li {
@@ -164,8 +168,18 @@
 <main class="log">
   <section class="about">
     <h2>About</h2>
-    <p>I'm Alex, based in British Columbia. Most of my projects start with a radio or gadget whose protocol nobody wrote down: take it apart, document how it works, then build a tool anyone can use. Some of that is security research, like JackIt. Some is day-job work that stays under wraps.</p>
-    <p>Python and Go for tools and services, C++ for ESP32 firmware, TypeScript for the browser, OpenSCAD for the parts that need printing.</p>
+    <p>I'm Alex, based in British Columbia. Most of my projects start with a radio or gadget whose protocol nobody wrote down: take it apart, document how it works, then build a tool anyone can use. Some of that is security research, like JackIt, which I presented at Black Hat. Some is day-job work that stays under wraps.</p>
+    <h3>What I work on</h3>
+    <ul class="skills">
+      <li>Radio protocols and RF</li>
+      <li>Reverse engineering hardware and protocols</li>
+      <li>Embedded firmware</li>
+      <li>Wireless security research</li>
+      <li>Browser tools that talk to hardware</li>
+      <li>Robotics</li>
+      <li>Parts designed for 3D printing</li>
+    </ul>
+    <p>Languages are tools, and I reach for whichever fits the job: Rust, C++, Python, Go, TypeScript, OpenSCAD.</p>
     <p>AI tools run through the whole development cycle, from research and design to code, tests and review. That's what keeps this many projects moving at once.</p>
     <p>Away from the bench: diving, or somewhere in the BC backcountry.</p>
   </section>
@@ -198,7 +212,7 @@
 const PROJECTS = [
   { name: "JackIt", url: "https://github.com/insecurityofthings/jackit", links: [["GitHub", "https://github.com/insecurityofthings/jackit"], ["insecurityofthings.com", "https://insecurityofthings.com/"]], f: .04, bw: .008, mode: "scan",
     stack: "Python, nRF24",
-    what: "Exploit code for MouseJack: types keystrokes into wireless mice and keyboards from a USB radio dongle. Co-written with phikshun, built on Bastille's research." },
+    what: "Exploit code for MouseJack: types keystrokes into wireless mice and keyboards from a USB radio dongle. Co-written with phikshun, and we presented it together at Black Hat. Built on Bastille's research." },
   { name: "NeonPlug", url: "https://neonplug.app", repo: "https://github.com/infamy/NeonPlug", logo: { src: "neonplug.png", w: 41, h: 28 }, f: .12, bw: .016, mode: "fm",
     stack: "TypeScript, Web Serial, BLE",
     what: "Program your radio from a browser tab: channels, zones, contacts and scan lists over USB or Bluetooth. Supports the DM-32UV, AT-D890UV, UV5R-Mini and several Yaesu handhelds." },
