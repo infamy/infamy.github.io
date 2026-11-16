@@ -115,6 +115,7 @@
   footer nav { margin-left: auto; display: flex; flex-wrap: wrap; gap: 22px; }
   footer nav a { color: var(--muted); text-decoration: none; }
   footer nav a:hover { color: var(--cyan); }
+  footer .btn88 img { display: block; image-rendering: pixelated; }
   footer .note { flex-basis: 100%; font-size: 12px; opacity: .75; }
 
   /* flag with a tooltip, same as ghosthid.app */
@@ -181,7 +182,10 @@
       <li>Reverse engineering</li>
       <li>Embedded firmware</li>
       <li>Wireless security</li>
+      <li>Malware for demos and training</li>
       <li>Browser tools for hardware</li>
+      <li>Live data visualization</li>
+      <li>Custom Linux images</li>
       <li>Robotics</li>
       <li>3D printed parts</li>
     </ul>
@@ -199,6 +203,7 @@
 <footer>
   <div class="wrap">
     <span class="sign">73 de <b>VA7IF</b></span>
+    <a class="btn88" href="https://www.meshmeld.com/"><img src="meshmeld-88x31.gif" width="88" height="31" alt="meshmeld.com" title="Link me! Copy the gif to your own server."></a>
     <nav aria-label="Footer">
       <a href="https://github.com/infamy/">GitHub</a>
       <a href="https://github.com/infamy/infamy.github.io">Source for this page</a>
@@ -232,7 +237,7 @@ const PROJECTS = [
     stack: "ESP32-S3, C++",
     what: "A thumb-sized USB stick any computer sees as a plain keyboard and mouse, driven from your phone over Wi-Fi." },
   { name: "Argus", f: .4, bw: .02, mode: "wide",
-    stack: "Go, vanilla JS. Not public yet",
+    stack: "Go, vanilla JS. Private",
     what: "A 4K wall display of everything going on around home: planes, ships, ferries, border waits, weather, lightning, tides, wildfire, quakes and local alerts, from 25 live feeds. One Go binary, no map library, its own fisheye projection." },
   { name: "SMD Magazines", short: "SMD Mags", url: "https://www.meshmeld.com/smd-magazines/", links: [["Label maker", "https://www.meshmeld.com/smd-magazines/"], ["Printables", "https://www.printables.com/model/1825340-smd-component-tape-magazines-xl-size-anti-release"], ["GitHub", "https://github.com/infamy/smd-magazines"]], f: .47, bw: .008, mode: "cw",
     stack: "Parametric OpenSCAD",
